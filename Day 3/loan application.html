@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#basic-form").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 3
+                    },
+                    age: {
+                        required: true,
+                        number: true,
+                        min: 18
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    weight: {
+                        required: {
+                            depends: function (elem) {
+                                return $("#age").val() > 60
+                            }
+                        },
+                        number: true,
+                        min: 0
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-image: url('bg.jpg');
+            background-size: 1550px 1000px;
+            background-repeat: no-repeat;
+            top: 50px;
+        }
+    #bank {
+            font-family: serif;
+            background-color: transparent;
+            padding-left: 15px;
+            padding-top: 20px;
+            padding-right: 25px;
+            padding-bottom: 30px;
+            font-size: large;
+        }
+    .center {
+            text-align: center;
+        }
+
+        #continue {
+            text-align-last: end;
+            font-family: serif;
+            font-size: larger;
+        }
+        #Next {
+         float: right;
+        }
+    </style>
+</head>
+  <body>
+    <h1>Basic Information</h1>
+        <div id="bank">
+            <form id="basic-form" action="" method="post">
+                <p>
+                    <label for="name">Name <span>(required, at least 3 characters)</span></label>
+                    <input id="name" name="name" minlength="3" type="text" required>
+                </p>
+                <p>
+                    <label for="name">Age <span>(optional)</span></label>
+                    <input id="name" name="name" minlength="3" type="text" required>
+                </p>
+                <p>
+                    <label for="birthday">DOB</label>
+                    <input type="date" id="DOB" name="DOB">
+
+                </p>
+                <p>
+                    <label for="email">E-Mail <span>(required)</span></label>
+                    <input id="email" type="email" name="email" required>
+                </p>
+                <p>
+                    <label for="phone">Phone no <span>(required)</span></label>
+                    <input id="phone" typeof="number" name="phone" required>
+                </p>
+
+                <p>
+                    <label for"address">Home Address<span>(required, at least 10 characters)</span></label>
+                    <input id="address" typeof="text" minlength=" 3" type="text" required>
+                </p>
+                <p>
+                    <label for="gender">Gender</label>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female" required> Female
+                </p>
+           </form>
+      </div>
+    <div id="Next">
+        <a href="loan application 2.html" class="button">Next></a>
+    </div>
+
+</body>
+</html>
