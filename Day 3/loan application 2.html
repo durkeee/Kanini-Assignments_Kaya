@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#basic-form").validate({
+                rules: {
+                    salary: {
+                        required: true,
+                        minlength: 4
+                    },
+                    Yearlyincome: {
+                        required: true,
+                        number: true,
+                        min: 100000
+                    },
+                    Monthlyexpenses: {
+                        required: true,
+                        min: 10000
+                    },
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-image: url('bg.jpg');
+            background-size: 1550px 1000px;
+            background-repeat: no-repeat;
+            top: 50px;
+        }
+        #fininfo {
+            font-family: serif;
+            background-color: transparent;
+            padding-left: 15px;
+            padding-top: 20px;
+            padding-right: 25px;
+            padding-bottom: 30px;
+        }
+
+        #loanreq {
+            font-family: serif;
+            background-color: transparent;
+            padding-left: 15px;
+            padding-top: 20px;
+            padding-right: 25px;
+            padding-bottom: 30px;
+        }
+    </style>
+    </head>
+    <body>
+        
+        <div id="fininfo">
+            <div>
+                <h1 id="FI">Financial Information</h1>
+            </div>
+
+            <lable>Salary<span>*</span></lable>
+            <input id="salary" type="number" required minlength:"3" />
+            <br /><br />
+            <lable> Yearly Income<span>*</span></lable>
+            <input id="YI" typeof="number" type="number" required minlength:"3" />
+            <br /><br />
+            <lable>Monthly Expenses<span>*</span></lable>
+            <input id="ME" type="number" required minlength:"3" />
+            <br /><br />
+            <lable>Existing Loan Amount<span>*</span></lable>
+            <input id="ELA" type="number" required minlength:"3" />
+            <p>
+                <input class="submit" type="submit" value="SUBMIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" onclick="click">SAVE</button>
+            </p>
+
+        </div>
+        <br /><br />
+
+        <div id="loanreq">
+            <div id="loar">
+                <h1>Loan Requirements</h1>
+            </div>
+
+            <lable>Loan Amount<span>*</span></lable>
+            <input id="LA" type="number" required minlength:"3" />
+            <br /><br />
+            <lable> Tenure<span>*</span></lable>
+            <input id="TN" typeof="number" type="number" required minlength:"3" />
+            <br /><br />
+            <lable>Collatral<span>*</span></lable>
+            <input id="Collatral" type="text" required minlength:"3" />
+            <br /><br />
+            <lable>Loan Type<span>*</span></lable>
+            <input id="LT" type="number" required minlength:"3" />
+            <br /><br />
+            <lable>CIBIL Score<span>*</span></lable>
+            <input id="CS" type="number" required minlength:"3" />
+            <p>
+                <input class="submit" type="submit" value="SUBMIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" onclick="click">SAVE</button>
+            </p>
+        </div>
+    </body>
+    </html>
